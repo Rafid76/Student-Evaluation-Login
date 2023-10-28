@@ -1,0 +1,26 @@
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 40%;
+  margin: auto;
+  margin-top: 10em;
+  padding-bottom: 2em;
+  border: 3px solid;
+}
+
+.login-wrapper input{
+  width: 500px;
+  height: 25px;
+  margin-top: 1px;
+}
+
+.login-wrapper button{
+  width: 10em;
+  height: 2.5em;
+}
+
+.login-wrapper button:hover{
+  color: blue;
+}

@@ -1,0 +1,30 @@
+.comment-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+
+  margin: auto;
+  width: 50%;
+}
+
+.comment-wrapper input{
+  height: 2.5em;
+  width: 30em;
+  padding: 0.4em;
+}
+
+.comment-wrapper textarea{
+  width: 30em;
+  padding: 0.4em;
+}
+
+.comment-wrapper button{
+  width: 10em;
+  height: 2.5em;
+  float: right;
+  margin-right: 23em;
+}
+
+.comment-wrapper button:hover{
+  color: blue;
+}
