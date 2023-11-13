@@ -6,8 +6,12 @@ import "./Comment.css";
 export default function Comment(props) {
   let navigate = useNavigate();
 
-  const [comment, setComment] = useState();
-  const [email, setEmail] = useState();
+  const [comment, setComment] = useState("");
+  const [email, setEmail] = useState("");
+  const [courseCode, setCourseCode] = useState("");
+  const [courseName, setCourseName] = useState("");
+  const [favoriteTopic, setFavoriteTopic] = useState("");
+  const [strongestSkill, setStrongestSkill] = useState("");
 
   useEffect(() => {
     const loggedInUser = auth.getToken();
@@ -19,7 +23,11 @@ export default function Comment(props) {
     navigate("/thank", {
       state: {
         email: email,
-        comment: comment
+        comment: comment,
+        courseCode: courseCode,
+        courseName: courseName,
+        favoriteTopic: favoriteTopic,
+        strongestSkill: strongestSkill,
       },
     });
   };
@@ -33,7 +41,11 @@ export default function Comment(props) {
             <tr>
               <td>Course Code:</td>
               <td>
-                <input type="text" defaultValue={"COMP308"} disabled={true} />
+                <input
+                  type="text"
+                  value={courseCode}
+                  onChange={(e) => setCourseCode(e.target.value)}
+                />
               </td>
             </tr>
             <tr>
@@ -41,15 +53,33 @@ export default function Comment(props) {
               <td>
                 <input
                   type="text"
-                  defaultValue={"Emerging Technologies"}
-                  disabled={true}
+                  value={courseName}
+                  onChange={(e) => setCourseName(e.target.value)}
                 />
               </td>
             </tr>
             <tr>
               <td>Student Email:</td>
               <td>
-                <input type="text" defaultValue={email} disabled={true} />
+                <input type="text" value={email} disabled={true} />
+              </td>
+            </tr>
+            <tr>
+              <td>Favorite Topic:</td>
+              <td>
+                <input
+                  type="text"
+                  onChange={(e) => setFavoriteTopic(e.target.value)}
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Strongest Technical Skill:</td>
+              <td>
+                <input
+                  type="text"
+                  onChange={(e) => setStrongestSkill(e.target.value)}
+                />
               </td>
             </tr>
             <tr>
